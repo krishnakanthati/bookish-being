@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Products</h1>
+<div class="row">
+    {% for product, offer in zipped_data %}
+    <div class="col">
+        <div class="card" style="width: 13rem;">
+            <img src="{{ product.image_url }}" style="height: 250px;" class="card-img-top" alt="...">
+            <div class="card-body">
+                <div style="height: 7rem;">
+                    <h6 class=" card-title">{{ product.name }}</h6>
+                    <p class="card-text">₹{{ product.price }}</p>
+                    <p class="card-text">₹{{ offer.code }}</p>
+                </div>
+                <a href="http://127.0.0.1:8000/products/cart" class="btn btn-primary">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
