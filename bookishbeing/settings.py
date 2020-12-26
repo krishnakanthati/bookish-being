@@ -26,7 +26,7 @@ SECRET_KEY = '6^^)i!mlb=0au02rouo$f2fd^aa*=!0y0dicr_^ynsoe=^93)0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bookish-being.herokuapp.com', '0.0.0.0']
+ALLOWED_HOSTS = ['bookish-being.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -80,15 +80,14 @@ WSGI_APPLICATION = 'bookishbeing.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heroku_cd4fa1f1ecb6c90',
-        'USER': 'b00da64ada38ee',
-        'PASSWORD': '5408dfaa',
+        'NAME': 'heroku_2f4206682cda9a3',
+        'USER': 'b6aa6d81775ad5',
+        'PASSWORD': '72b836b5',
         'HOST': 'us-cdbr-east-02.cleardb.com',
         'PORT': '3306',
-        'OPTIONS': {'ssl_mode': 'DISABLED', },
+        'OPTIONS': {'ssl_mode': 'DISABLED', 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'", 'autocommit': True, },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
