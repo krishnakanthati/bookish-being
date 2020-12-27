@@ -84,7 +84,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': '@Krishna7',
         'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PORT': '33627',
         # 'OPTIONS': {'ssl_mode': 'DISABLED', 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'", 'autocommit': True, },
     }
 }
