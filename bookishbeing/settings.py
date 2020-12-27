@@ -10,8 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-import urlparse
-import sys
 from pathlib import Path
 import os
 
@@ -79,17 +77,17 @@ WSGI_APPLICATION = 'bookishbeing.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'heroku_2f4206682cda9a3',
-#         'USER': 'b6aa6d81775ad5',
-#         'PASSWORD': '72b836b5',
-#         'HOST': 'us-cdbr-east-02.cleardb.com',
-#         'PORT': '3306',
-#         'OPTIONS': {'ssl_mode': 'DISABLED', 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'", 'autocommit': True, },
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'heroku-2f4206682cda9a3',
+        'USER': 'b6aa6d81775ad5',
+        'PASSWORD': '72b836b5',
+        'HOST': 'us-cdbr-east-02.cleardb.com',
+        'PORT': '3306',
+        'OPTIONS': {'ssl_mode': 'DISABLED', 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'", 'autocommit': True, },
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -129,35 +127,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-
-# Register database schemes in URLs.
-urlparse.uses_netloc.append('mysql')
-
-try:
-
-    # Check to make sure DATABASES is set in settings.py file.
-    # If not default to {}
-
-    if 'DATABASES' not in locals():
-        DATABASES = {}
-
-    if 'DATABASE_URL' in os.environ:
-        url = urlparse.urlparse(os.environ['DATABASE_URL'])
-
-        # Ensure default database exists.
-        DATABASES['default'] = DATABASES.get('default', {})
-
-        # Update with environment configuration.
-        DATABASES['default'].update({
-            'NAME': url.path[1:],
-            'USER': url.username,
-            'PASSWORD': url.password,
-            'HOST': url.hostname,
-            'PORT': url.port,
-        })
-
-        if url.scheme == 'mysql':
-            DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
-except Exception:
-    print('Unexpected error:', sys.exc_info())
