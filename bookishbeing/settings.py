@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'bookishbeing.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db',
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': '@Krishna7',
         'HOST': '127.0.0.1',
