@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'bookishbeing.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heroku-2f4206682cda9a3',
+        'NAME': 'heroku_2f4206682cda9a3',
         'USER': 'b6aa6d81775ad5',
         'PASSWORD': '72b836b5',
         'HOST': 'us-cdbr-east-02.cleardb.com',
