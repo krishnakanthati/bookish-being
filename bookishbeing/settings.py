@@ -85,7 +85,7 @@ DATABASES = {
         'PASSWORD': '72b836b5',
         'HOST': 'us-cdbr-east-02.cleardb.com',
         'PORT': '3306',
-        # 'OPTIONS': {'ssl_mode': 'DISABLED', 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'", 'autocommit': True, },
+        'OPTIONS': {'ssl_mode': 'DISABLED', 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'", 'autocommit': True, },
     }
 }
 
