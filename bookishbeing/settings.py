@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'bookishbeing.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db',
-        'USER': 'root',
-        'PASSWORD': '@Krishna7',
-        'HOST': '127.0.0.1',
+        'NAME': 'brnlgcfir6wdzrs7fb0d',
+        'USER': 'uko705s2bqcdvwwu',
+        'PASSWORD': '4RPuhwN4besOPWLOb2lW',
+        'HOST': 'brnlgcfir6wdzrs7fb0d-mysql.services.clever-cloud.com',
         'PORT': '3306',
         # 'OPTIONS': {'ssl_mode': 'DISABLED', 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'", 'autocommit': True, },
     }
