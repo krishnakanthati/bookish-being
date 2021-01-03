@@ -26,7 +26,7 @@ SECRET_KEY = '6^^)i!mlb=0au02rouo$f2fd^aa*=!0y0dicr_^ynsoe=^93)0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['bookish-being.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['bookish-being.herokuapp.com/products', '127.0.0.1']
 
 
 # Application definition
